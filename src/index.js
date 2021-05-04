@@ -8,8 +8,8 @@ const getJSONfileContent = (fullFilePath) => JSON.parse(fs.readFileSync(fullFile
 const genDiff = (filepath1, filepath2) => {
   const fullFilePath1 = getFullFilePath(filepath1);
   const fullFilePath2 = getFullFilePath(filepath2);
-  const file1Content = getJSONfileContent(filepath1);
-  const file2Content = getJSONfileContent(filepath2);
+  const file1Content = getJSONfileContent(fullFilePath1);
+  const file2Content = getJSONfileContent(fullFilePath2);
   const file1Keys = _.keys(file1Content);
   const file2Keys = _.keys(file2Content);
   const keys = _.union(file1Keys, file2Keys).sort();
@@ -19,13 +19,12 @@ const genDiff = (filepath1, filepath2) => {
     const value2 = file2Content[key];
     if (!_.has(file1Content, key)) {
       return [...acc, `  + ${key}: ${file2Content[key]}`];
-    } else if (!_.has(file2Content, key)) {
+    } if (!_.has(file2Content, key)) {
       return [...acc, `  - ${key}: ${value1}`];
-    } else if (value1 !== value2) {
-      return [...acc, `  - ${key}: ${value1}`, `  - ${key}: ${value2}`];
-    } else {
-      return [...acc, `    ${key}: ${value1}`];
+    } if (value1 !== value2) {
+      return [...acc, `  - ${key}: ${value1}`, `  + ${key}: ${value2}`];
     }
+    return [...acc, `    ${key}: ${value1}`];
   }, []);
 
   const result = `{\n${diffs.join('\n')}\n}`;

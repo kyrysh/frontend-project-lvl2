@@ -1,13 +1,15 @@
+import _ from 'lodash';
 import yaml from 'js-yaml';
 
+const parsers = {
+  '.json': JSON.parse,
+  '.yml': yaml.safeLoad,
+  '.yaml': yaml.safeLoad,
+};
+
 export default ([data, extension]) => {
-  switch (extension) {
-    case '.json':
-      return JSON.parse(data);
-    case '.yml':
-    case '.yaml':
-      return yaml.load(data);
-    default:
-      throw new Error('Unknown file extension');
+  if (!_.has(parsers, extension)) {
+    throw new Error(`File extension ${extension} is not supported`);
   }
+  return parsers[extension](data);
 };

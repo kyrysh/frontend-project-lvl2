@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
-import { Command } from 'commander';
+import program from 'commander';
 import genDiff from '../src/genDiff.js';
-
-const program = new Command();
 
 program
   .description('Compares two JSON files and shows a difference.')

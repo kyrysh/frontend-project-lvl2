@@ -2,8 +2,11 @@
   "name": "@hexlet/code",
   "type": "module",
   "version": "1.0.0",
-  "description": "Hexlet Project2 \"General Difference\"",
-  "main": "../src/genDiff.js",
+  "description": "Data Comparator",
+  "main": "genDiff.js",
+  "bin": {
+    "gendiff": "bin/gendiff.js"
+  },
   "scripts": {
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --bail"
   },

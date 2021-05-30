@@ -7,9 +7,9 @@ const parsers = {
   '.yaml': yaml.safeLoad,
 };
 
-export default ([data, extension]) => {
-  if (!_.has(parsers, extension)) {
-    throw new Error(`File extension ${extension} is not supported`);
+export default (data, type) => {
+  if (!_.has(parsers, type)) {
+    throw new Error(`File type ${type} is not supported`);
   }
-  return parsers[extension](data);
+  return parsers[type](data);
 };

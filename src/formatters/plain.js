@@ -7,10 +7,10 @@ const stringifyValue = (value) => {
   return _.isString(value) ? `'${value}'` : `${value}`;
 };
 
-const plain = (ast, path = []) => {
+const plain = (ast, pathElements = []) => {
   const formattedAST = _.compact(ast.map((node) => {
-    const pathElements = [...path, node.name];
-    const nodePath = pathElements.join('.');
+    const newPathElements = [...pathElements, node.name];
+    const nodePath = newPathElements.join('.');
 
     switch (node.type) {
       case 'added':
@@ -22,7 +22,7 @@ const plain = (ast, path = []) => {
       case 'unmodified':
         return '';
       case 'nested':
-        return `${plain(node.children, pathElements)}`;
+        return `${plain(node.children, newPathElements)}`;
       default:
         throw new Error(`"${node.type}" type is not supported.`);
     }

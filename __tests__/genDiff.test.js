@@ -15,6 +15,7 @@ const file1YAMLPath = getFixturePath('file1.yml');
 const file2YAMLPath = getFixturePath('file2.yml');
 const resultStylish = readFile('resultStylish.txt');
 const resultPlain = readFile('resultPlain.txt');
+const resultJSON = readFile('resultJSON.txt');
 
 test('Formatter stylish: json and yaml files compare', () => {
   expect(genDiff(file1JSONPath, file2JSONPath)).toBe(resultStylish);
@@ -24,4 +25,9 @@ test('Formatter stylish: json and yaml files compare', () => {
 test('Formatter plain: json and yaml files compare', () => {
   expect(genDiff(file1JSONPath, file2JSONPath, 'plain')).toBe(resultPlain);
   expect(genDiff(file1YAMLPath, file2YAMLPath, 'plain')).toBe(resultPlain);
+});
+
+test('Formatter JSON: json and yaml files compare', () => {
+  expect(genDiff(file1JSONPath, file2JSONPath, 'json')).toBe(resultJSON);
+  expect(genDiff(file1YAMLPath, file2YAMLPath, 'json')).toBe(resultJSON);
 });

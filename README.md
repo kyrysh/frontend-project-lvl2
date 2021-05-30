@@ -47,6 +47,13 @@ Property 'group2' was removed
 ]
 ```
 
+## Install
+```sh
+$ git clone https://github.com/kyrysh/frontend-project-lvl2
+$ cd frontend-project-lvl2
+$ npm link
+```
+
 ## Help
 ```sh
 $ gendiff -h

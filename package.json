@@ -8,7 +8,7 @@
     "gendiff": "bin/gendiff.js"
   },
   "scripts": {
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest --bail"
+    "test": "npx jest --bail"
   },
   "repository": {
     "type": "git",
@@ -22,17 +22,18 @@
   "homepage": "https://github.com/kyrysh/frontend-project-lvl2#readme",
   "dependencies": {
     "commander": "^7.2.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-jest": "^24.3.6",
+    "create-npmrc": "^2.0.2",
     "js-yaml": "^3.14.1",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@jest/globals": "^27.0.1",
     "eslint": "^7.27.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-json": "^3.0.0",
-    "jest": "^26.6.3"
+    "eslint-plugin-import": "^2.23.3",
+    "eslint-plugin-jest": "^24.3.6",
+    "jest": "^27.0.1",
+    "jest-cli": "^27.0.1"
   },
   "jest": {
     "testEnvironment": "node",

@@ -4,7 +4,7 @@ const stringifyValue = (value) => {
   if (_.isObject(value)) {
     return '[complex value]';
   }
-  return _.isString(value) ? `'${value}'` : `${value}`;
+  return _.isString(value) ? `'${value}'` : String(value);
 };
 
 const plain = (ast, pathElements = []) => {

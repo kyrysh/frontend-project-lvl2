@@ -69,4 +69,4 @@ $ gendiff -f <formatter> <filepath1> <filepath2>
 | Plain | Stylish | Json
 |:-----:|:-----:|:-----:
 | `$ gendiff -f plain <filepath1> <filepath2>` | `$ gendiff -f stylish <filepath1> <filepath2>` | `$ gendiff -f json <filepath1> <filepath2>`
-| [![asciicast](https://asciinema.org/a/blpPp6UrKfqrtMu0alGoSjJwB.svg)](https://asciinema.org/a/blpPp6UrKfqrtMu0alGoSjJwB) | [![asciicast](https://asciinema.org/a/QJPXdtoMljEZ8ieUcAkxbGwk9.svg)](https://asciinema.org/a/QJPXdtoMljEZ8ieUcAkxbGwk9) | [![asciicast](https://asciinema.org/a/9Tad79aNxdjZpwz7uZwZBC6uP.svg)](https://asciinema.org/a/9Tad79aNxdjZpwz7uZwZBC6uP)
+| [![asciicast](https://asciinema.org/a/blpPp6UrKfqrtMu0alGoSjJwB.svg)](https://asciinema.org/a/blpPp6UrKfqrtMu0alGoSjJwB) | [![asciicast](https://asciinema.org/a/QJPXdtoMljEZ8ieUcAkxbGwk9.svg)](https://asciinema.org/a/QJPXdtoMljEZ8ieUcAkxbGwk9) | [![asciicast](https://asciinema.org/a/qb8zdEPOgzi3s7JSXXNLcluy7.svg)](https://asciinema.org/a/qb8zdEPOgzi3s7JSXXNLcluy7)
